@@ -18,7 +18,18 @@ console.log(ghost.color());
 console.log(ghost.color());
 console.log(ghost.color());
 console.log(ghost.color());
-
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
+console.log(ghost.color());
 
 /*
 // Решение на Codewars
