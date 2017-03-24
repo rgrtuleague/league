@@ -26,7 +26,7 @@ fuel.dis = 40;
 console.log(fuel.toString);
 
 
-
+//--
 
 
 
