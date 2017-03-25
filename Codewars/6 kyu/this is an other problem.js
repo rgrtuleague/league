@@ -62,14 +62,15 @@ namedOne.fullName // -> "Bill Smith" (unchanged)
 
 
 function NamedOne(name, surname) {
-    this.firstName = name;
-    this.lastName = surname;
-    var x = [this.firstName, this.lastName];
-    name = x[0];
-    surname = x[1];
-    this.fullName = (name + ' ' + x[1]);
-    /*this.firstName = this.fullName.split(' ')[0] || name;
-    this.lastName = this.fullName.split(' ')[1];*/
+   function getFullName() {
+       return this.firstName + ' ' + this.lastName;
+   }
+
+   function setFullName(fullName) {
+       var names = fullName.split(' ');
+       this.firstName = names[0] || '';
+       this.lastName = names[1] || '';
+   }
 }
 
 var namedOne = new NamedOne("Naomi","Wang");
