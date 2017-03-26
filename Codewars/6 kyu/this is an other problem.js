@@ -2,7 +2,7 @@
  * Created by Sergey on 25.03.2017.
  */
 /*
-
+// https://www.codewars.com/kata/this-is-an-other-problem/javascript
 Description:
 
     After you've solved @priyankaherur's problem ( http://www.codewars.com/kata/this-is-a-problem/javascript )
@@ -62,30 +62,44 @@ namedOne.fullName // -> "Bill Smith" (unchanged)
 
 
 function NamedOne(name, surname) {
-   function getFullName() {
-       return this.firstName + ' ' + this.lastName;
-   }
+    this.firstName = name;
+    this.lastName = surname;
+    function get_full_name() {
+        return this.firstName + ' ' + this.lastName
+    }
 
-   function setFullName(fullName) {
-       var names = fullName.split(' ');
-       this.firstName = names[0] || '';
-       this.lastName = names[1] || '';
-   }
+
+    function set_full_name(new_name) {
+        var names = new_name.trim().split(/\s+/);
+        if (names.length == 2) {
+            this.firstName = names[0] || '';
+            this.lastName = names[1] || '';
+        }
+    }
+    Object.defineProperty(this, 'fullName', {
+        get: get_full_name
+        , set: set_full_name
+        , configurable: true
+        , enumerable:   true })
 }
 
-var namedOne = new NamedOne("Naomi","Wang");
+var namedOne = new NamedOne("Naomi","Wang")
 
 namedOne.firstName = "John";
 namedOne.lastName = "Doe";
 // ...then...
-console.log(namedOne.fullName, '=> must  JOHN DOE'); // -> "John Doe"
+console.log(namedOne.fullName); // -> "John Doe"
 
 // -- And :
 namedOne.fullName = "Bill Smith";
 // ...then...
-console.log(namedOne.firstName, '=> must Bill'); // -> "Bill"
-console.log(namedOne.lastName, ' => must Smith');  // -> "Smith"
+console.log(namedOne.firstName); // -> "Bill"
+console.log(namedOne.lastName);  // -> "Smith"
 
+// -- But :
+namedOne.fullName = "Tom"; // -> no : lastName missing
+namedOne.fullName = "TomDonnovan"; // -> no : no space between first & last names
+console.log(namedOne.fullName); // -> "Bill Smith" (unchanged)
 
 
 
