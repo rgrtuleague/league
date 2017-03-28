@@ -53,22 +53,72 @@
 </head>
 
 <body>
-<div>Пользователи:</div>
-<ul>
+<div class="article">Пользователи:</div>
+<ul class="spis">
     <li id="Masha">Маша</li>
     <li id="Vova">Вовочка</li>
 </ul>
 
+<table id="tabl" border="1">
+    <caption>Выписка лицевого счета</caption>
+    <tr>
+        <th>Month</th>
+        <th>Balance</th>
+    </tr>
+    <tr>
+        <td id="mon1"><a href="ab" name="j">Junuare</a></td>
+        <td id="price1">500 rub</td>
+    </tr>
+    <tr>
+        <td id="mon2"><a href="ab" name="f">February</a></td>
+        <td id="price2">800 rub</td>
+    </tr>
+    <tr>
+        <td id="mon3"><a href="ab" name="m">March</a></td>
+        <td id="price3">300 rub</td>
+    </tr>
+    <tr>
+        <td id="mon4"><a href="ab" name="ap">April</a></td>
+        <td id="price4">700 rub</td>
+    </tr>
+</table>
+
+<img src="Горы.jpg" alt="Mountains"
+        width="300" height="200"/>
 <!-- комментарий -->
 
 <script>
-   /* var head1 = document.head;
-    console.log(head1);
+    //Поиск по id
+  /*var elemMon = document.getElementById('mon3');
+  elemMon.style.background = 'green';
 
-    var li1 = document.body.children[1];
-    console.log(li1);*/
+  var elemPrice = document.getElementById('price2');
+  elemPrice.style.background = 'yellow';*/
+    //-----------------------------------------------------------------
+  // Поиск по TagName
+   /* var elemTable = document.getElementById('tabl');
+    elemTable.style.backgroundColor = 'white';
+    elemTable.style.color = 'grey';
+console.log(elemTable);
+    var cap = elemTable.getElementsByTagName('*');
 
-   console.log(document.getElementById('Masha'));
+    for (var i = 0; i < cap.length; i++) {
+        cap[i].style.color = 'brown';
+    }
+    console.log(cap);
+    */
+//------------------------------------------------------------------------------
+   // Поиск по отрибуту name
+    /*var elems = document.getElementsByName('ap');
+    elems[0].style.color = 'green';*/
+//----------------------------------------------------------------------------
+    // Поиск по ClassName
+    /*var elems = document.getElementsByClassName('spis');
+    elems[0].style.backgroundColor = '#677';*/
+
+
+
+
 </script>
 
 </body>
