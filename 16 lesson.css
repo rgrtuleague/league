@@ -1,0 +1,14 @@
+li {
+    background-color: gold ;
+    color: red;
+    border-color: darkblue;
+}
+ul > li:last-child {  /* Последний дочерний элемент */
+    background-color: slateblue;
+}
+td {
+    color: darkblue;
+}
+td:hover {
+    color: coral;
+}

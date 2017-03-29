@@ -50,6 +50,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="16%20lesson.css" type="text/css">   <!-- Подключаем CSS-файл-->
 </head>
 
 <body>
@@ -66,25 +67,34 @@
         <th>Balance</th>
     </tr>
     <tr>
-        <td id="mon1"><a href="ab" name="j">Junuare</a></td>
+        <td id="mon1"><a href="ab1" name="j">Junuare</a></td>
         <td id="price1">500 rub</td>
     </tr>
     <tr>
-        <td id="mon2"><a href="ab" name="f">February</a></td>
+        <td id="mon2"><a href="ab2" name="f">February</a></td>
         <td id="price2">800 rub</td>
     </tr>
     <tr>
-        <td id="mon3"><a href="ab" name="m">March</a></td>
+        <td id="mon3"><a href="ab3" name="m">March</a></td>
         <td id="price3">300 rub</td>
     </tr>
     <tr>
-        <td id="mon4"><a href="ab" name="ap">April</a></td>
+        <td id="mon4"><a href="ab4" name="ap">April</a></td>
         <td id="price4">700 rub</td>
     </tr>
 </table>
 
 <img src="Горы.jpg" alt="Mountains"
         width="300" height="200"/>
+
+<ul>
+    <li>Этот</li>
+    <li>тест</li>
+</ul>
+<ul>
+    <li>полностью</li>
+    <li>пройден</li>
+</ul>
 <!-- комментарий -->
 
 <script>
@@ -115,9 +125,25 @@ console.log(elemTable);
     // Поиск по ClassName
     /*var elems = document.getElementsByClassName('spis');
     elems[0].style.backgroundColor = '#677';*/
+//--------------------------------------------------------------------------
+    // querySelectorAll  (поиск по CSS-селектору)
+   /* var elements = document.querySelectorAll('ul > li:last-child');
 
-
-
+     for (var i = 0; i < elements.length; i++) {
+     console.log( elements[i].innerHTML ); // "Вовочка", "тест", "пройден"
+     }*/
+//--------------------------------------------------------------------------
+    // mathes - ничего не ищет, а только проверяет
+   /* var elems = document.body.children;
+   for (var i=0; i<elems.length;i++) {
+       if (elems[i].matches('ul[class="spis"]')) {
+           alert('ul class = spis');
+       }
+   }*/
+//------------------------------------------------------------------------
+    // closest
+    /*Метод elem.closest(css) ищет ближайший элемент выше по иерархии DOM, подходящий под CSS-селектор css.
+        Сам элемент тоже включается в поиск.*/
 
 </script>
 
