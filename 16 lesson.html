@@ -95,6 +95,14 @@
     <li>полностью</li>
     <li>пройден</li>
 </ul>
+<ul>
+    <li class="chapter">Глава I
+        <ul>
+            <li class="subchapter">Глава <span class="num">1.1</span></li>
+            <li class="subchapter">Глава <span class="num">1.2</span></li>
+        </ul>
+    </li>
+</ul>
 <!-- комментарий -->
 
 <script>
@@ -144,7 +152,21 @@ console.log(elemTable);
     // closest
     /*Метод elem.closest(css) ищет ближайший элемент выше по иерархии DOM, подходящий под CSS-селектор css.
         Сам элемент тоже включается в поиск.*/
+    /*
+var numberSpan = document.querySelector('.num');
+console.log(numberSpan);
 
+    // ближайший элемент сверху подходящий под селектор li
+    console.log(numberSpan.closest('li').className);
+
+    // ближайший элемент сверху подходящий под селектор .chapter
+    console.log(numberSpan.closest('.chapter').tagName);
+
+    // ближайший элемент сверху, подходящий под селектор span
+    // это сам numberSpan, так как поиск включает в себя сам элемент
+    console.log(numberSpan.closest('span'));
+    */
+    //--------------------------------------------------------------------------
 </script>
 
 </body>
