@@ -113,6 +113,8 @@
 <!-- Комментарий -->
 
 
+<div class="textCont1">1</div>
+<div class="textCont2">2</div>
 <!-- комментарий -->
 
 <script>
@@ -203,13 +205,54 @@ console.log(numberSpan);
     //------------------------------------------------------------------------------
 // тег: nodeName и TagName
     // При помощи tagName мы можем работать только с элементами, а nodeName может что-то сказать и о других типах узлов.
-    console.log(document.body.children[1].nodeName);
+    //console.log(document.body.children[1].nodeName);
     //---------------------------------------------------------------------
 
     // innerHTML - содержимое элемента
     // можно и читать, и писать
-    document.getElementById('Masha').innerHTML = 'Катя';
-    document.querySelector('ul li').innerHTML = 'Vika';
+    /*document.getElementById('Masha').innerHTML = 'Катя';
+    document.querySelector('ul li').innerHTML = 'Vika';*/
+    //------------------------------------------------------------------------------
+
+    // outerHTML - элемент HTML целиком
+    /*var elem = document.body.children[0];
+    console.log(elem.outerHTML); */// <div class="article">Пользователи:</div>
+    // Изменить outerHTML элемента невозможно
+    //-------------------------------------------------------------------------
+
+    // data - содержимое текстового узла
+     // Если свойство innerHTML есть только у узлов-элементов, то содержимое других узлов,
+     // например, текстовых или комментариев, доступно на чтение и запись через свойство data.
+    /*for (var i=13;i<document.body.childNodes.length;i++) {
+        console.log(document.body.childNodes[i].data); // Тип nodeType, ... Комментарий ..
+    }*/
+//---------------------------------------------------------------------------------
+
+    // textContent - содержит только текст внутри элемента, за вычетом всех <тегов>
+   /* var elem = document.body.children[4];
+    console.log(elem.textContent);*/  // Этот
+                                    // тест
+    /*Как видно из примера выше, возвращается в точности весь текст, включая переводы строк и пробелы, но без тегов.
+        Иными словами, elem.textContent возвращает конкатенацию всех текстовых узлов внутри elem.*/
+
+   /* Не сказать, чтобы эта информация была часто востребована.
+        Гораздо полезнее возможность записать текст в элемент, причём именно как текст!
+        В этом примере имя посетителя попадёт в первый div как innerHTML, а во второй – как текст:*/
+  /* var name = prompt("Enter name", "<b>Vinni-Pooh</b>");
+var elem1 = document.getElementsByClassName('textCont1');
+    elem1[0].innerHTML = name;  // Vinni-pooh
+var elem2 = document.getElementsByClassName("textCont2");
+    elem2[0].textContent = name; // <b>Vinni-Pooh</b>*/
+  //----------------------------------------------------------------------------
+
+    // Свойство hidden
+    /*Как правило, видим или невидим узел, определяется через CSS, свойствами display или visibility.
+        В стандарте HTML5 предусмотрен специальный атрибут и свойство для этого: hidden.*/
+    // в body:   <div hidden> text</div>
+    // или в скрипте:
+    var lastChild = document.getElementsByClassName('textCont1');
+    console.log(lastChild[0]);
+    lastChild[0].hidden = true;
 </script>
 
 </body>
