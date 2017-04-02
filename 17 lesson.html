@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17 lesson</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+ <style>
+     body {
+         margin: 50px 100px;
+     }
+     .panel-body_hidden {
+         display: none;
+     }
+
+     .panel-heading {
+         cursor: pointer;
+     }
+     .panel-status {
+         color: #aaa;
+         margin-right: 20px;
+     }
+ </style>
+<body>
+<div class="panel panel-primary">
+    <div onclick="toggleElem(this)" class="panel-heading"><span class="panel-status panel-status_expanded">[ Закрыть ]</span>Panel heading without title</div>
+    <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Asperiores autem commodi dignissimos earum exercitationem,
+        expedita fugiat inventore labore, laudantium perferendis praesentium quam quia quibusdam quidem sed sequi soluta vel voluptatem.
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div onclick="toggleElem(this)" class="panel-heading"><span class="panel-status">[ Открыть ]</span>Panel heading without title</div>
+    <div class="panel-body panel-body_hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Asperiores autem commodi dignissimos earum exercitationem,
+        expedita fugiat inventore labore, laudantium perferendis praesentium quam quia quibusdam quidem sed sequi soluta vel voluptatem.
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div onclick="toggleElem(this)" class="panel-heading"><span class="panel-status">[ Открыть ]</span>Panel heading without title</div>
+    <div class="panel-body panel-body_hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Asperiores autem commodi dignissimos earum exercitationem,
+        expedita fugiat inventore labore, laudantium perferendis praesentium quam quia quibusdam quidem sed sequi soluta vel voluptatem.
+    </div>
+</div>
+<script>
+    function toggleElem(elem) {
+        var current = elem.nextElementSibling.classList.toggle('panel-body_hidden');  // При нажатии на заголовок текст сворачиается/разворачиается
+        console.log(current);
+        var status = elem.getElementsByClassName('panel-status')[0];
+        status.innerHTML = (!current) ? '[ Закрыть ]' : '[ Открыть ]';
+
+    }
+</script>
+
+</body>
+</html>
