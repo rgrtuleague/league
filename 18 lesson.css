@@ -1,3 +1,6 @@
+body {
+    background-color: lightskyblue;
+}
 .str {
     display: inline-block;
     border-color: #aaaaaa;
@@ -7,6 +10,7 @@
 }
 p {
     background-color: antiquewhite;
+    width: 500px;
 }
 .tb1 {
     border-style: solid;
@@ -18,6 +22,12 @@ tr, td {
     background-color: lavender;
     padding: 3px;
 }
-ol {
-    list-style: url('m.jpg');
+span {
+    background-color: antiquewhite;
+    font-family: Droid Serif;
+    font-style: italic; /*наклонный*/
+}
+div {
+    background-color: gainsboro;
+    width: 600px;
 }

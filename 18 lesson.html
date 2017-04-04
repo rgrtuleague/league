@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>18 lesson</title>
     <link rel="stylesheet" href="18%20lesson.css" type="text/css">   <!-- Подключаем CSS-файл-->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet"> <!--Подключили шрифт Droid Serif-->
 </head>
 
-<p><h1>Документ и объекты страницы</h1></p>
- <p>
+<h1>Документ и объекты страницы</h1>
+
     <div class="str"> Dom</div>
     <div class="str"> BOM</div>
     <div class="str"> JavaScript</div>
-</p>
+
 <p>Пробелы и переводы строки - это тоже текст, полноправные символы, которые учитываются в DOM</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</br>
     Aliquid animi asperiores assumenda consectetur cupiditate debitis eius eligendi illo itaque
@@ -36,13 +37,34 @@
         <td>24</td>
     </tr>
 </table>
+
 <ol type="a" start="4">
-    <strong>Список дел</strong>
-    <li>Дело 1</li>
-    <li>Дело 2</li>
-    <li>Дело 3</li>
-    <li>Дело 4</li>
-    <li>Дело 5</li>
+    <strong>На практике мы чаще свего работаем с 4 видами узлов</strong>
+    <li>Документ - точка входа в DOM</li>
+    <li>Элементы - основные строительные блоки</li>
+    <li>Текстовые узлы - содержат, собственно, текст</li>
+    <li>Комментарии - иногда в них можно включить инфоромацию, которая не будет показана, но доступна из JS</li>
 </ol>
+
+<div>
+    <h3>DOM в Elements не совсем соответсвует реальному</h3>
+    Отображение DOM во вкладке Elements не совсем соответствует реальному.
+    В частности, там не отображаются пробельные узлы. Это сделано для удобства просмотра. Но мы-то знаем, что они есть.
+
+    С другой стороны, в Elements можно увидеть CSS-псевдоэлементы, такие как ::before, ::after.
+    Это также сделано для удобства, в DOM их не существует.
+</div>
+
+<h1>Навигация по DOM-элементам</h1>
+<p>Доступ к DOM начинается с <span>document</span>. Из него
+можно добраться до любых узлов</p>
+
+<p>Самые верхние элемента дерева доступны напрямую из <span>document</span></p>
+<p>Первая точка входа - document.documentElement</p>
+<p>Вторая точка входа - document.body</p>
+<script>
+    //document.body.style.backgroundColor = 'red';
+    console.log(document.body); // <body>
+</script>
 </body>
 </html>
