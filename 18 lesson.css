@@ -1,0 +1,23 @@
+.str {
+    display: inline-block;
+    border-color: #aaaaaa;
+    border-width: 2px;
+    margin: 5px;
+    border-style: solid;
+}
+p {
+    background-color: antiquewhite;
+}
+.tb1 {
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    margin-top: 30px;
+}
+tr, td {
+    background-color: lavender;
+    padding: 3px;
+}
+ol {
+    list-style: url('m.jpg');
+}
