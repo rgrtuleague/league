@@ -37,14 +37,15 @@
         <td>24</td>
     </tr>
 </table>
-
-<ol type="a" start="4">
+<div>
+    <ol type="a" start="4">
     <strong>На практике мы чаще свего работаем с 4 видами узлов</strong>
     <li>Документ - точка входа в DOM</li>
     <li>Элементы - основные строительные блоки</li>
     <li>Текстовые узлы - содержат, собственно, текст</li>
     <li>Комментарии - иногда в них можно включить инфоромацию, которая не будет показана, но доступна из JS</li>
 </ol>
+</div>
 
 <div>
     <h3>DOM в Elements не совсем соответсвует реальному</h3>
@@ -62,7 +63,9 @@
 <p>Самые верхние элемента дерева доступны напрямую из <span>document</span></p>
 <p>Первая точка входа - document.documentElement</p>
 <p>Вторая точка входа - document.body</p>
+<div>
 <h2>Дети</h2>
+    <img src="dom-links-child.png">
 <ul>
     <li><span class="sv">childNodes </span>- хранит все дочерние элементы, включая текстовые<br>
     Вот что выведет скрипт <br>
@@ -81,7 +84,86 @@
     </li>
     <li><span class="sv">firstChild и lastChild</span> обеспечивают доступ к первому и последнему элементу .</li>
     <li><span class="sv">previousSibling / nextSibling</span> обеспечивают доступ к элементу слева и справа от данного<br></li>
+</div>
 </ul>
+<div>
 <h2>Навигация только по элементам</h2>
+    <img src="dom-links-elements.png">
+    <ul>
+        <li><span class="sv">children</span> - только дочерние узлы-элементы, то есть соответствующие тегам</li>
+        <li><span class="sv">firstElementChild, lastElementChild</span> - соответственно, первый и последний дети-элементы</li>
+        <li><span class="sv">previousElementSibling, nextElementSibling</span> - соседи-элементы</li>
+        <li><span class="sv">parentElement</span> - родитель-элемент</li>
+    </ul>
+    Модифицируем скрипт выше<br>
+    script <br>
+    for (var i=0;i < document.body.children.length;i++) {<br>
+    console.log(document.body.children[i]);<br>
+    }<br>
+    /script<br>
+    Output: <br>
+
+    <script>
+        for (var i=0;i<document.body.children.length;i++) {
+            document.write(document.body.children[i]);
+        }
+    </script>
+</div>
+<div>
+    <br>
+    <p>Особые ссылки для таблиц</p>
+
+    <p>У конкретных элементов DOM могут быть свои дополнительные ссылки для большего удобства навигации.
+
+    Здесь мы рассмотрим таблицу, так как это важный частный случай и просто для примера.</p>
+
+   <p> В списке ниже выделены наиболее полезные:</p>
+    <ul>
+    TABLE
+    <li>table.rows – коллекция строк TR таблицы.</li>
+    <li>table.caption/tHead/tFoot – ссылки на элементы таблицы CAPTION, THEAD, TFOOT.</li>
+    <li>table.tBodies – коллекция элементов таблицы TBODY, по спецификации их может быть несколько.</li>
+    </ul>
+        <ul>
+    THEAD/TFOOT/TBODY
+    <li>tbody.rows – коллекция строк TR секции.</li>
+        </ul>
+        <ul>
+    TR
+    <li>tr.cells – коллекция ячеек TD/TH</li>
+    <li>tr.sectionRowIndex – номер строки в текущей секции THEAD/TBODY</li>
+    <li>tr.rowIndex – номер строки в таблице</li>
+        </ul>
+    <ul>
+    TD/TH
+    <li>td.cellIndex – номер ячейки в строке</li>
+    </ul>
+
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

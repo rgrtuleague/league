@@ -7,7 +7,7 @@ body {
     border-width: 2px;
     margin: 5px;
     border-style: solid;
-    width: 100px;
+    width: 200px;
 }
 p {
     background-color: antiquewhite;
@@ -30,7 +30,8 @@ span {
 }
 div {
     background-color: gainsboro;
-    width: 600px;
+    width: 800px;
+    margin: 5px;
 }
 .sv {
     background-color: orange;
