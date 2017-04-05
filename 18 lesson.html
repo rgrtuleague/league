@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>18 lesson</title>
     <link rel="stylesheet" href="18%20lesson.css" type="text/css">   <!-- Подключаем CSS-файл-->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet"> <!--Подключили шрифт Droid Serif-->
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700i" rel="stylesheet"> <!--Подключили шрифт Droid Serif-->
 </head>
 
 <h1>Документ и объекты страницы</h1>
@@ -62,9 +62,26 @@
 <p>Самые верхние элемента дерева доступны напрямую из <span>document</span></p>
 <p>Первая точка входа - document.documentElement</p>
 <p>Вторая точка входа - document.body</p>
-<script>
-    //document.body.style.backgroundColor = 'red';
-    console.log(document.body); // <body>
-</script>
+<h2>Дети</h2>
+<ul>
+    <li><span class="sv">childNodes </span>- хранит все дочерние элементы, включая текстовые<br>
+    Вот что выведет скрипт <br>
+        script <br>
+        for (var i=0;i < document.body.childNodes.length;i++) {<br>
+                console.log(document.body.childNodes[i]);<br>
+            }<br>
+        /script<br>
+    Output: <br>
+
+        <script>
+            for (var i=0;i<document.body.childNodes.length;i++) {
+                document.write(document.body.childNodes[i]);
+            }
+        </script>
+    </li>
+    <li><span class="sv">firstChild и lastChild</span> обеспечивают доступ к первому и последнему элементу .</li>
+    <li><span class="sv">previousSibling / nextSibling</span> обеспечивают доступ к элементу слева и справа от данного<br></li>
+</ul>
+<h2>Навигация только по элементам</h2>
 </body>
 </html>

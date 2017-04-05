@@ -7,6 +7,7 @@ body {
     border-width: 2px;
     margin: 5px;
     border-style: solid;
+    width: 100px;
 }
 p {
     background-color: antiquewhite;
@@ -24,10 +25,16 @@ tr, td {
 }
 span {
     background-color: antiquewhite;
-    font-family: Droid Serif;
+    font-family: 'Droid Serif', serif;
     font-style: italic; /*наклонный*/
 }
 div {
     background-color: gainsboro;
     width: 600px;
+}
+.sv {
+    background-color: orange;
+}
+li {
+    margin: 5px;
 }
