@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="18%20lesson.css" type="text/css">   <!-- Подключаем CSS-файл-->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700i" rel="stylesheet"> <!--Подключили шрифт Droid Serif-->
 </head>
-
+<body>
 <h1>Документ и объекты страницы</h1>
 
     <div class="str"> Dom</div>
@@ -239,6 +239,12 @@ Output: <br></p>
     Иначе говоря, метод closest бежит от текущего элемента вверх по цепочке родителей и проверяет, <br>
     подходит ли элемент под указанный CSS-селектор. Если подходит – останавливается и возвращает его.</p>
 </div>
+
+<div> <h1>Свойства узлов: тип, тег и содержимое</h1></div>
+<img src="hierarchy.png">
+<script>
+    alert(document.body.childNodes[5]);
+</script>
 </body>
 </html>
 
