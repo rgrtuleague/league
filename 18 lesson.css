@@ -39,3 +39,12 @@ div {
 li {
     margin: 5px;
 }
+#nav {
+    text-decoration: underline;
+}
+.primer {
+    background-color: darkgray;
+}
+.primerS {
+    background-color: aqua;
+}

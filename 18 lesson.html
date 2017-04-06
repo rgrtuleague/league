@@ -69,49 +69,49 @@
 <ul>
     <li><span class="sv">childNodes </span>- хранит все дочерние элементы, включая текстовые<br>
     Вот что выведет скрипт <br>
-        script <br>
+        <p class="primer">script <br>
         for (var i=0;i < document.body.childNodes.length;i++) {<br>
                 console.log(document.body.childNodes[i]);<br>
             }<br>
         /script<br>
-    Output: <br>
+    Output: <br></p>
 
-        <script>
+        <p class="primerS"><script>
             for (var i=0;i<document.body.childNodes.length;i++) {
                 document.write(document.body.childNodes[i]);
             }
-        </script>
+        </script></p>
     </li>
     <li><span class="sv">firstChild и lastChild</span> обеспечивают доступ к первому и последнему элементу .</li>
     <li><span class="sv">previousSibling / nextSibling</span> обеспечивают доступ к элементу слева и справа от данного<br></li>
 </div>
 </ul>
-<div>
-<h2>Навигация только по элементам</h2>
-    <img src="dom-links-elements.png">
-    <ul>
-        <li><span class="sv">children</span> - только дочерние узлы-элементы, то есть соответствующие тегам</li>
-        <li><span class="sv">firstElementChild, lastElementChild</span> - соответственно, первый и последний дети-элементы</li>
-        <li><span class="sv">previousElementSibling, nextElementSibling</span> - соседи-элементы</li>
-        <li><span class="sv">parentElement</span> - родитель-элемент</li>
-    </ul>
-    Модифицируем скрипт выше<br>
-    script <br>
-    for (var i=0;i < document.body.children.length;i++) {<br>
-    console.log(document.body.children[i]);<br>
-    }<br>
-    /script<br>
-    Output: <br>
+<div id="nav-elem">
+<h2 id="nav">Навигация только по элементам</h2>
+<img src="dom-links-elements.png">
+<ul>
+    <li><span class="sv">children</span> - только дочерние узлы-элементы, то есть соответствующие тегам</li>
+    <li><span class="sv">firstElementChild, lastElementChild</span> - соответственно, первый и последний дети-элементы</li>
+    <li><span class="sv">previousElementSibling, nextElementSibling</span> - соседи-элементы</li>
+    <li><span class="sv">parentElement</span> - родитель-элемент</li>
+</ul>
+Модифицируем скрипт выше<br>
+<p class="primer">script <br>
+for (var i=0;i < document.body.children.length;i++) {<br>
+console.log(document.body.children[i]);<br>
+}<br>
+/script<br>
+Output: <br></p>
 
-    <script>
-        for (var i=0;i<document.body.children.length;i++) {
-            document.write(document.body.children[i]);
-        }
-    </script>
+<p class="primerS"><script>
+    for (var i=0;i<document.body.children.length;i++) {
+        document.write(document.body.children[i]);
+    }
+</script></p>
 </div>
 <div>
     <br>
-    <p>Особые ссылки для таблиц</p>
+    <h2>Особые ссылки для таблиц</h2>
 
     <p>У конкретных элементов DOM могут быть свои дополнительные ссылки для большего удобства навигации.
 
@@ -139,6 +139,105 @@
     <li>td.cellIndex – номер ячейки в строке</li>
     </ul>
 
+</div>
+
+   <div> <h1>Методы поиска элементов DOM</h1></div>
+<div>
+    <h3 class="sv">getElementById</h3>
+    <p>Найдем заголовок с id='nav':</p>
+    <p class="primer">
+        var znav = document.getElementById('nav');
+        document.write(znav.innerHTML);
+    </p>
+   <p class="primerS"> <script>
+        var znav = document.getElementById('nav');
+        document.write(znav.innerHTML);
+    </script></p>
+</div>
+
+<div>
+    <h3 class="sv">getElementsByTagName</h3>
+    <p>Найдем все li-шки в одном из пунктов выше</p>
+    <p class="primer">
+        var tagId = document.getElementById('nav-elem');<br>
+        var lis = tagId.getElementsByTagName('li');<br>
+        for (var j=0;j<lis.length;j++) {<br>
+        document.write(lis[j].innerHTML + '< br >');<br>
+        }
+    </p>
+    <p class="primerS"><script>
+        var tagId = document.getElementById('nav-elem');
+        var lis = tagId.getElementsByTagName('li');
+        document.write('Output<br>');
+        for (var j=0;j<lis.length;j++) {
+            document.write(lis[j].innerHTML + '<br>');
+        }
+    </script></p>
+    <p>Обратим внимание: в отличие от getElementById,
+        который существует только в контексте document,
+        метод getElementsByTagName может искать внутри любого элемента.</p>
+</div>
+
+<div>
+    <h3 class="sv">getElementsByName</h3>
+    <p>Вызов document.getElementsByName(name) позволяет получить все элементы с данным атрибутом name.<br>
+    Например, все элементы с именем age:<br>
+    var elems = document.getElementsByName('age');</p>
+</div>
+<div>
+    <h3 class="sv">getElementsByClassName</h3>
+    <p>Вызов elem.getElementsByClassName(className) возвращает коллекцию элементов с классом className. <br>
+    Находит элемент и в том случае, если у него несколько классов, а искомый – один из них.</p>
+</div>
+<div>
+    <h3 class="sv">querySeletorAll</h3>
+    <p>Вызов elem.querySelectorAll(css) возвращает все элементы внутри elem, удовлетворяющие CSS-селектору css.</p>
+    <p>Следующий запрос получает все элементы LI, которые являются последними потомками в UL:</p>
+    <p class="primer">var selectLi = document.querySelectorAll('ul > li:last-child');<br>
+    for (var k=0;k<selectLi.length;k++) {<br>
+    document.write(selectLi[k].innerHTML);<br>
+    document.write('< br >');<br>
+    }<br>
+    Output:<br></p>
+    <p class="primerS"><script>
+        var selectLi = document.querySelectorAll('ul > li:last-child');
+        for (var k=0;k<selectLi.length;k++) {
+            document.write(selectLi[k].innerHTML);
+            document.write('<br>');
+        }
+    </script></p>
+</div>
+
+<div>
+    <h3 class="sv">querySeletor</h3>
+    <p>Вызов elem.querySelector(css) возвращает не все, а только первый элемент, соответствующий CSS-селектору css.
+        Иначе говоря, результат – такой же, как и при elem.querySelectorAll(css)[0],
+        но в последнем вызове сначала ищутся все элементы, а потом берётся первый,
+        а в elem.querySelector(css) ищется только первый, то есть он эффективнее.
+
+        Этот метод часто используется, когда мы заведомо знаем, что подходящий элемент только один,
+        и хотим получить в переменную сразу его.</p>
+</div>
+
+<div>
+    <h3 class="sv">matches</h3>
+    <p>Метод elem.matches(css) ничего не ищет, а проверяет, удовлетворяет ли elem селектору css. Он возвращает true либо false.</p>
+    <p>Этот метод бывает полезным, когда мы перебираем элементы <br>
+        (в массиве или по обычным навигационным ссылкам) и пытаемся отфильтровать те из них, которые нам интересны.</p>
+    <p class="primer">var elems = document.body.children; <br>
+        for (var i = 0; i < elems.length; i++) { <br>
+        if (elems[i].matches('a[href$="zip"]')) { <br>
+        alert( "Ссылка на архив: " + elems[i].href ); <br>
+        } <br>
+        } <br>
+       </p>
+</div>
+<div>
+    <h3 class="sv">closest</h3>
+    <p>Метод elem.closest(css) ищет ближайший элемент выше по иерархии DOM, <br>
+    подходящий под CSS-селектор css. Сам элемент тоже включается в поиск.<br>
+    Иначе говоря, метод closest бежит от текущего элемента вверх по цепочке родителей и проверяет, <br>
+    подходит ли элемент под указанный CSS-селектор. Если подходит – останавливается и возвращает его.</p>
 </div>
 </body>
 </html>
