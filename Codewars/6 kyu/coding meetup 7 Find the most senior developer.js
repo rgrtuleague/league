@@ -1,7 +1,7 @@
 /**
  * Created by Sergey on 09.04.2017.
  */
-/*
+/* (Функция вывождит самых старых участников массива)
 
 You will be given an array of objects representing data about developers
 who have signed up to attend the next coding meetup that you are organising.
