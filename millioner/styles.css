@@ -9,24 +9,34 @@
 .millioner-question {
     position: absolute;
     border: solid blue 3px;
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
 .millioner-variants {
     position: absolute;
     border: solid blue 3px;
+    margin-left: 100px;
+    margin-top: 150px;
 }
 
 .millioner-timer {
     position: absolute;
     border: solid blue 3px;
+    margin-right: 100px;
+    margin-top: 50px;
 }
 
 .millioner-tips {
     position: absolute;
     border: solid blue 3px;
+    right: 0;
+    top: 200px;
 }
 
 .millioner-progress {
     position: absolute;
     border: solid blue 3px;
+    margin-right: 10px;
+    margin-bottom: 50px;
 }
