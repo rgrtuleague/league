@@ -2,9 +2,10 @@
     font-size: 0;
     height: 600px;
     white-space: nowrap; /*Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой*/
+    transition: margin-left 0.5s ease-out 0.3s;
 }
 
-.slider__imgages {
+.slider__images {
     position: relative;
     overflow: hidden;
     width: 900px;

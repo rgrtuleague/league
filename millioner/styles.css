@@ -1,0 +1,32 @@
+.millioner-field {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    border: solid blue 3px;
+    background-color: aliceblue;
+}
+
+.millioner-question {
+    position: absolute;
+    border: solid blue 3px;
+}
+
+.millioner-variants {
+    position: absolute;
+    border: solid blue 3px;
+}
+
+.millioner-timer {
+    position: absolute;
+    border: solid blue 3px;
+}
+
+.millioner-tips {
+    position: absolute;
+    border: solid blue 3px;
+}
+
+.millioner-progress {
+    position: absolute;
+    border: solid blue 3px;
+}
