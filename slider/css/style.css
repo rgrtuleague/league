@@ -1,0 +1,16 @@
+.slider__images-wrap {
+    font-size: 0;
+    height: 600px;
+    white-space: nowrap; /*Пробелы не учитываются, переносы строк в коде HTML игнорируются, весь текст отображается одной строкой*/
+}
+
+.slider__imgages {
+    position: relative;
+    overflow: hidden;
+    width: 900px;
+    height: 600px;
+    margin: auto;
+}
+div {
+    display: block;
+}

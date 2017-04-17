@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="'slider">
+        <div class="slider__imgages">
+            <div class="slider__images-wrap">
+            <img src="pic1.jpg" alt="picture 1">
+            <img src="pic2.jpg" alt="picture 2">
+            <img src="pic3.jpg" alt="picture 3">
+            <img src="pic4.jpg" alt="picture 4">
+        </div>
+    </div>
+
+
+        <div class="slider-navigation">
+
+            <a href="#" class="slider__pager slider__pager_previous"><</a>
+            <a href="#" class="slider__pager slider__pager_next">></a>
+
+            <ul class="slider__pagination">
+                <li class="slider__pagination-item"><a href="#" data-slider__item="0" class="active">1</a></li>
+                <li class="slider__pagination-item"><a href="#" data-slider__item="1" class="">2</a></li>
+                <li class="slider__pagination-item"><a href="#" data-slider__item="2" class="">3</a></li>
+                <li class="slider__pagination-item"><a href="#" data-slider__item="3" class="">4</a></li>
+            </ul>
+        </div>
+    </div>
+<script src="slider.js"></script>
+<script>
+    new Slider('.slider', {
+        direction: 'horizontal',
+        currentSlide: 2
+    });
+</script>
+</body>
+</html>
