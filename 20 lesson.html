@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20 lesson</title>
+    <style>
+        .but {
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+  <input class='but' type="button" value="push me">
+
+<script>
+    function hidElem() {
+        this.hidden = true;
+    }
+    var button = document.querySelector('.but');
+    button.addEventListener('click', hidElem);
+</script>
+</body>
+</html>
