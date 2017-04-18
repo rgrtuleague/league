@@ -13,7 +13,7 @@ function Slider(selector, options) {
 
     var currentSlideIndex = options.currentSlide || 0,
         imagesCount = sliderImagesNode.children.length,
-        slideSize = sliderImagesNode.offsetWidth;
+        slideSize = sliderImagesNode[(options.direction === 'vertical') ? 'offsetHeight' : 'offsetWidth'];
 
     this.prevSlide = function() {
         if (currentSlideIndex === 0) {
@@ -33,18 +33,28 @@ function Slider(selector, options) {
 
 
     this.__render = function() {
-        sliderImagesNode.style.marginLeft = -(currentSlideIndex * slideSize) + 'px';
+        var directionStyle = (options.direction === 'vertical') ? 'marginTop' : 'marginLeft';
+        sliderImagesNode.style[directionStyle] = -(currentSlideIndex * slideSize) + 'px';
+
+        paginationNode.querySelector('.active').classList.remove('active');
+        paginationNode.children[currentSlideIndex].querySelector('a').classList.add('active');
     };
 
-    prevSliderNode.onclick = function() {
+    prevSliderNode.onclick = function(e) {
+        e.preventDefault();
         __self.prevSlide();
         __self.__render();
     };
 
-    nextSliderNode.onclick = function() {
+    nextSliderNode.onclick = function(e) {
+        e.preventDefault();
         __self.nextSlide();
         __self.__render();
     };
+
+    if (options.direction === 'vertical') {
+        sliderImagesNode.style.whiteSpace = 'normal';
+    }
 
     this.__render();
 

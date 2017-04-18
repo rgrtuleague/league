@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>slider</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,8 +20,8 @@
 
         <div class="slider-navigation">
 
-            <a href="#" class="slider__pager slider__pager_previous"><</a>
-            <a href="#" class="slider__pager slider__pager_next">></a>
+            <a href="#" class="slider__pager slider__pager_previous"><i class="fa-circle-o"></i></a>
+            <a href="#" class="slider__pager slider__pager_next"><i class="fa-amazon"></i></a>
 
             <ul class="slider__pagination">
                 <li class="slider__pagination-item"><a href="#" data-slider__item="0" class="active">1</a></li>
@@ -34,8 +34,9 @@
 <script src="slider.js"></script>
 <script>
     new Slider('.slider', {
-        direction: 'horizontal',
-        currentSlide: 2
+        direction: 'vertical',
+        currentSlide: 2,
+        changeInterval: 1500
     });
 </script>
 </body>
