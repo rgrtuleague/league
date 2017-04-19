@@ -4,21 +4,48 @@
     <meta charset="UTF-8">
     <title>20 lesson</title>
     <style>
-        .but {
-            width: 100px;
+        body * {
+            margin: 10px;
+            border: 1px solid blue;
         }
 
     </style>
 </head>
 <body>
-  <input class='but' type="button" value="push me">
+
+<form id="form">FORM
+    <div id="div">DIV
+        <p id="p">P</p>
+    </div>
+</form>
 
 <script>
-    function hidElem() {
-        this.hidden = true;
+    function getRandom255() {
+        return Math.round(Math.random()*255);
     }
-    var button = document.querySelector('.but');
-    button.addEventListener('click', hidElem);
+    function getRandomColor() {
+        var arr = [];
+        arr[0] = getRandom255();
+        arr[1] = getRandom255();
+        arr[2] = getRandom255();
+        return 'rgb(' + arr.join(',') + ')';
+    }
+
+    function onClickElem(e) {
+        alert(e.target);
+        alert(e.currentTarget);
+        console.log(e.eventPhase);
+        alert('-----');
+        e.currentTarget.style.backgroundColor = getRandomColor();
+        //e.stopPropagation();
+    }
+
+
+
+    form.addEventListener('click', onClickElem, true);
+    div.addEventListener('click', onClickElem, true);
+    p.addEventListener('click', onClickElem, true);
+   // p.addEventListener('click', stopEvent);
 </script>
 </body>
 </html>
