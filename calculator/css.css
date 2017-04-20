@@ -1,0 +1,109 @@
+.calculator {
+    background-color: #eeeeee;
+    border: solid black 2px;
+    width: 500px;
+    height: 550px;
+    position: relative;
+    margin: auto;
+}
+.tablo {
+    position: absolute;
+    width: 360px;
+    border: inherit;
+    height: 50px;
+    top: 10px;
+    left: 90px;
+    text-align: right;
+    font-size: 30pt;
+}
+.clearButton {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+    border: inherit;
+    font-size: 20pt;
+    padding: 2px;
+}
+.panel *{
+    border: solid black 2px;
+    position: absolute;
+    font-size: 50pt;
+    width: 85px;
+    height: 80px;
+    text-align: center;
+}
+.panel *:hover {
+    background-color: black;
+    color: white;
+}
+.clearButton:hover {
+    background-color: black;
+    color: white;
+}
+#seven {
+    top: 90px;
+    left: 50px;
+}
+#eight {
+    top: 90px;
+    left: 155px;
+}
+#nine {
+    top: 90px;
+    left: 260px;
+}
+#divide {
+    top: 90px;
+    left: 365px;
+}
+
+#four {
+    top: 200px;
+    left: 50px;
+}
+#five {
+    top: 200px;
+    left: 155px;
+}
+#six {
+    top: 200px;
+    left: 260px;
+}
+#multiply {
+    top: 200px;
+    left: 365px;
+}
+
+#one {
+    top: 310px;
+    left: 50px;
+}
+#two {
+    top: 310px;
+    left: 155px;
+}
+#three {
+    top: 310px;
+    left: 260px;
+}
+#sub {
+    top: 310px;
+    left: 365px;
+}
+
+#zero {
+    top: 420px;
+    left: 50px;
+}
+#comma {
+    top: 420px;
+    left: 155px;
+}
+#equal {
+    top: 420px;
+    left: 260px;
+}
+#add {
+    top: 420px;
+    left: 365px;
+}
