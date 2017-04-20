@@ -43,30 +43,30 @@ function mazeRunner(maze, directions) {
             }
         }
     }
-    for (i=0;i<directions.length;i++) {
+      for (i=0;i<directions.length;i++) {
         switch (directions[i]) {
             case 'N': x -= 1;
-                if (maze[x][y] == 1 || !x) return 'Dead';
+                if ( x<0 || maze[x][y] == 1 ) return 'Dead';
                 if (maze[x][y] == 3) return 'Finish';
                 break;
             case 'E': y += 1;
-                if (maze[x][y] == 1 || !y) return 'Dead';
+                if ( y == maze.length || maze[x][y] == 1 ) return 'Dead';
                 if (maze[x][y] == 3) return 'Finish';
                 break;
             case 'W': y -= 1;
-                if (maze[x][y] == 1 || !y) return 'Dead';
+                if ( y<0 || maze[x][y] == 1 ) return 'Dead';
                 if (maze[x][y] == 3) return 'Finish';
                 break;
             case 'S': x += 1;
-                if (maze[x][y] == 1 || !x) return 'Dead';
+                if (x == maze.length || maze[x][y] == 1) return 'Dead';
                 if (maze[x][y] == 3) return 'Finish';
                 break;
-
+            default: break;
         }
     }
     return 'Lost';
 }
-console.log([ [ 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 ],
+console.log(mazeRunner([ [ 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 ],
               [ 1, 3, 1, 0, 1, 0, 0, 0, 0, 1 ],
               [ 1, 0, 1, 0, 0, 0, 1, 1, 0, 1 ],
               [ 1, 0, 1, 1, 1, 1, 1, 0, 0, 1 ],
@@ -75,25 +75,8 @@ console.log([ [ 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 ],
               [ 1, 0, 1, 0, 1, 0, 0, 0, 0, 0 ],
               [ 1, 0, 1, 0, 1, 0, 1, 1, 0, 1 ],
               [ 1, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
-              [ 1, 1, 1, 0, 1, 1, 1, 1, 2, 1 ] ]
-    [ 'N',
-    'N',
-    'N',
-    'N',
-    'N',
-    'N',
-    'N',
-    'N',
-    'N',
-    'S',
-    'S',
-    'S',
-    'S',
-    'S',
-    'S',
-    'S',
-    'S',
-    'S' ]);
+              [ 1, 1, 1, 0, 1, 1, 1, 1, 2, 1 ] ],
+    [ 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S' ]));  // LOST
 
 
 
