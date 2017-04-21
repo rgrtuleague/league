@@ -1,0 +1,52 @@
+.main {
+    position: relative;
+    border: solid black 1px;
+    width: 700px;
+    height: 400px;
+}
+.field {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 100px;
+    top: 30px;
+    border: solid black 1px;
+    /*background-color: #eeeeee;*/
+}
+.winGo {
+    position: absolute;
+    top: 320px;
+    left: 200px;
+}
+.buttonAgain {
+    position: absolute;
+    top: 370px;
+    left: 200px;
+}
+.statistic {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border: inherit;
+    width: 200px;
+    height: 150px;
+}
+p {
+    text-align: center;
+    font-size: 20px;
+}
+table {
+    border-collapse: collapse;
+}
+td{
+    border: black solid 1px;
+    width: 98px;
+    height: 98px;
+    background-color: #eeeeee;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 60px;
+}
+td:hover {
+    background-color: darkgrey;
+}
