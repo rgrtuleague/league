@@ -13,7 +13,7 @@
     border: solid black 1px;
     /*background-color: #eeeeee;*/
 }
-.winGo {
+#winGo {
     position: absolute;
     top: 320px;
     left: 200px;
