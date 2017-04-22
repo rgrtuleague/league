@@ -1,0 +1,22 @@
+.hovercards-root {
+    display: none;
+}
+
+div {
+    border: solid 1px black;
+}
+
+
+#main {
+    position: relative;
+    width: 90%;
+    height: 800px;
+    margin: 0;
+}
+#WindowSetQuestion {
+    position: absolute;
+    left: 5px;
+    top: 30px;
+    background-color: #bde4ff;
+}
+
