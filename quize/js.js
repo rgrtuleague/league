@@ -15,7 +15,7 @@ var divWindowSetQuestion = document.createElement('div');
     divWindowSetQuestion.innerHTML = 'Enter the question';
     divMain.appendChild(divWindowSetQuestion);
 
-
+var formQuestion = document.createElement('form');
 
 
 
