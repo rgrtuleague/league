@@ -18,5 +18,21 @@ div {
     left: 5px;
     top: 30px;
     background-color: #bde4ff;
+    width: 300px;
+    height: 600px;
 }
-
+#textQuestion {
+    width: 290px;
+    height: 80px;
+}
+input {
+    display: inline-block;
+}
+.variants {
+    width: 290px;
+    height: 400px;
+    background-color: aliceblue;
+}
+#trueVariant {
+    background-color: lawngreen;
+}
