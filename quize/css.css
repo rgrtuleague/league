@@ -33,6 +33,6 @@ input {
     height: 400px;
     background-color: aliceblue;
 }
-#trueVariant {
+.variants div input[type="text"] {
     background-color: lawngreen;
 }

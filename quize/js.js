@@ -114,6 +114,8 @@ function addVariant() {
         var newVariant = divFieldVariants.cloneNode(true); // Делаем клон div-ки с полем ввода варианта и кнопкой ОК
         newVariant.children[0].removeAttribute('id');    // Удаляем id верного варианта
     newVariant.children[1].setAttribute('value', 'OK');  // текущий последний вариант всегда будет кнопкой OK
+    newVariant.children[1].classList.add('ok');
+    newVariant.children[1].classList.remove('delete');
 
     this.removeEventListener('click', addVariant);
     newVariant.children[0].value = '';
@@ -121,16 +123,23 @@ function addVariant() {
     divVariantsOneChoice.insertBefore(newVariant, buttonEndQuestion);
     newVariant.previousElementSibling.children[1].setAttribute('value', 'Delete');
     newVariant.previousElementSibling.children[1].classList.add('delete');
+    newVariant.previousElementSibling.children[1].classList.remove('ok');
 }
 
 
 // С помощью делегирования повесим на предок кнопок DELETE обработчик
 divVariantsOneChoice.addEventListener('click', deleteVariant);
 
+
+// Функция не доделана
 function deleteVariant(event) {
-    var target = event.target;
-    if (target.className == 'delete') { // надо исправить баг: скласс DELETE нужно присвоить ПОСЛЕ того как нажали OK
-        console.log('yeah BITCH!!');
+
+    var target = event.target;  // button 'delete'
+    var parent = target.parentElement;
+    if (target.getAttribute('class') == 'delete' && (parent.parentElement.children.length > 3)) {
+        console.log(target);
+
+        parent.parentNode.removeChild(parent);
     }
 }
 
