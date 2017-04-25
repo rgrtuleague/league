@@ -6,7 +6,7 @@
 
 var divMain = document.createElement('div');
 divMain.setAttribute('id', 'main');
-divMain.innerHTML = 'Опрос';
+//divMain.innerHTML = 'Опрос';
 document.body.appendChild(divMain);
 
 // Создаим окно генерации вопроса
@@ -107,41 +107,92 @@ divVariantsOneChoice.appendChild(buttonEndQuestion);
 
 
 // Функция при нажатии на кнопку OK добавляет снизу новую строку (максимум 10)
-buttonOK.addEventListener('click', addVariant);
+divVariantsOneChoice.addEventListener('click', addVariant);
 
-function addVariant() {
+function addVariant(event) {
     if (divVariantsOneChoice.children.length > 10) return;
-        var newVariant = divFieldVariants.cloneNode(true); // Делаем клон div-ки с полем ввода варианта и кнопкой ОК
-        newVariant.children[0].removeAttribute('id');    // Удаляем id верного варианта
-    newVariant.children[1].setAttribute('value', 'OK');  // текущий последний вариант всегда будет кнопкой OK
-    newVariant.children[1].classList.add('ok');
-    newVariant.children[1].classList.remove('delete');
 
-    this.removeEventListener('click', addVariant);
-    newVariant.children[0].value = '';
-    newVariant.children[1].addEventListener('click', addVariant);
-    divVariantsOneChoice.insertBefore(newVariant, buttonEndQuestion);
-    newVariant.previousElementSibling.children[1].setAttribute('value', 'Delete');
-    newVariant.previousElementSibling.children[1].classList.add('delete');
-    newVariant.previousElementSibling.children[1].classList.remove('ok');
-}
+    var target = event.target;
+    if (target.id == 'buttonOK') {
+        var newVariant = document.createElement('input'); //  новая строка с вариантом
+        newVariant.setAttribute('type', 'text');
+
+        var newButtonOK = document.createElement('input'); //  новая кнопка OK
+        newButtonOK.setAttribute('id', 'buttonOK');
+        newButtonOK.setAttribute('value', 'OK');
+        newButtonOK.setAttribute('type', 'button');
+        //newButtonOK.addEventListener('click', addVariant);
 
 
-// С помощью делегирования повесим на предок кнопок DELETE обработчик
-divVariantsOneChoice.addEventListener('click', deleteVariant);
+        var newDivFieldVariants = document.createElement('div');
 
-
-// Функция не доделана
-function deleteVariant(event) {
-
-    var target = event.target;  // button 'delete'
-    var parent = target.parentElement;
-    if (target.getAttribute('class') == 'delete' && (parent.parentElement.children.length > 3)) {
-        console.log(target);
-
-        parent.parentNode.removeChild(parent);
+        newDivFieldVariants.appendChild(newVariant);
+        newDivFieldVariants.appendChild(newButtonOK);
+        divVariantsOneChoice.insertBefore(newDivFieldVariants, buttonEndQuestion);
     }
 }
+
+// Зададим действие для кнопки окончания формирования текущего вопроса
+buttonEndQuestion.addEventListener('click', setQuestionOnBoard);
+
+function setQuestionOnBoard(event) {  // Функция добавляет при клике на кнопку Next Question вопрос с вариантами на доску
+
+    var arrVariants = [];
+    var target = event.target; // кнопка Next question
+    var parent = target.parentElement;
+     for (var i=0;i<parent.children.length-1;i++) {
+         arrVariants.push(parent.children[i].children[0])
+     }
+    shuffle(arrVariants);  // перетасовываем массив вариантов
+
+    var liQuestion = document.createElement('li');  // Очередной вопрос
+    var pTextQuestion = document.createElement('p'); //  Текст вопроса
+    var ulVariants = document.createElement('ul');  // Неупорядоченный список вариантов
+
+    pTextQuestion.innerHTML = textQuestion.value;
+    for (var j=0;j<arrVariants.length;j++) {
+        var liVariant = document.createElement('li');
+        liVariant.innerHTML = arrVariants[j].value;
+        ulVariants.appendChild(liVariant);
+    }
+    liQuestion.appendChild(pTextQuestion);
+    liQuestion.appendChild(ulVariants);
+
+    olQuestions.appendChild(liQuestion);
+}
+
+// div-ка для получившихся вопросов и вариантами
+var divQuestions = document.createElement('div'); // div-ка с вопросами
+divQuestions.setAttribute('id', 'question');
+divMain.insertBefore(divQuestions, formWindowSetQuestion);
+
+var olQuestions = document.createElement('ol');  // Упорядоченный список вопросов
+divQuestions.appendChild(olQuestions);
+
+
+
+
+
+
+
+// Функция SHUFFLE перетасовывает массив
+ function shuffle(arr) {
+ // console.log(arr);
+ // Для начала определим два произвольных элемента в массиве
+ // Все это будет в цикле из arr.length посторений
+ for (var i=0;i<arr.length;i++) {
+ var i1 = Math.floor(Math.random() * arr.length);
+ var i2 = Math.floor(Math.random() * arr.length);
+ // console.log(i1, i2);
+ if (i1 == arr.length) i1--;
+ if (i2 == arr.length) i2--;
+ var q = arr[i1];
+ arr[i1] = arr[i2];
+ arr[i2] = q;
+ }
+ return arr
+ }
+
 
 
 
