@@ -1,0 +1,20 @@
+body {
+    background-color: #A771CA;
+}
+h1 small {
+    color: #0000FD;
+}
+.mainList {
+
+}
+.iconGame {
+    text-align: center;
+}
+.imageGame {
+    width: 300px;
+}
+.refNameGame {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
